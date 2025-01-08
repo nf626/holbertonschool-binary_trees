@@ -51,26 +51,26 @@ return (right_height + 1);
 }
 }
 /**
- * power_to - function that calculates the value x to the power of y.
- * @x: value.
- * @y: power to raise x to.
- *
- * Return: x to the power of y, 1 if power to 0, -1 negative.
- */
+* power_to - function that calculates the value x to the power of y.
+* @x: value.
+* @y: power to raise x to.
+*
+* Return: x to the power of y, 1 if power to 0, -1 negative.
+*/
 int power_to(int x, int y)
 {
-  if (y < 0)
-    {
-      return (-1);
-    }
-  else if (y == 0)
-    {
-      return (1);
-    }
-  else
-    {
-      return (x * power_to(x, y - 1));
-    }
+if (y < 0)
+{
+return (-1);
+}
+else if (y == 0)
+{
+return (1);
+}
+else
+{
+return (x * power_to(x, y - 1));
+}
 }
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect.
@@ -80,21 +80,21 @@ int power_to(int x, int y)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-  size_t height = 0, nodes = 0, power = 0;
-  
-  if (tree == NULL)
-    {
-      return (0);
-    }
+size_t height = 0, nodes = 0, power = 0;
 
-  if (tree->left == NULL && tree->right == NULL)
-    {
-      return (1);
-    }
+if (tree == NULL)
+{
+return (0);
+}
 
-  height = binary_tree_height(tree);
-  nodes = binary_tree_size(tree);
-  power = (size_t)power_to(2, height + 1);
+if (tree->left == NULL && tree->right == NULL)
+{
+return (1);
+}
 
-  return (nodes == power - 1);
+height = binary_tree_height(tree);
+nodes = binary_tree_size(tree);
+power = (size_t)power_to(2, height + 1);
+
+return (nodes == power - 1);
 }
